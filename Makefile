@@ -21,6 +21,8 @@ NAME	= libft.a
 
 $(NAME):	$(OBJS)
 			ar rcs $(NAME) $(OBJS)
+			$(CC) -shared -o libft.so $(OBJS)
+
 
 all:	$(NAME)
 
@@ -34,6 +36,12 @@ flean:	clean
 		$(RM) $(NAME)
 
 re:		fclean all
+
+
+so:			$(OBJS)
+			ar rcs $(NAME) $(OBJS)
+			$(CC) -shared -o libft.so $(OBJS)
+
 
 bonus:	$(OBJS) $(BONUS_OBJS)
 		ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
