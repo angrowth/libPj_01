@@ -35,6 +35,10 @@ flean:	clean
 
 re:		fclean all
 
+so:	$(OBJS)
+	ar rcs $(NAME) $(OBJS)
+	$(CC) -shared -o libft.so $(OBJS)
+
 bonus:	$(OBJS) $(BONUS_OBJS)
 		ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 

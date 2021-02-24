@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		ft_in(char c, char *str)
+int		ft_in(char const c, char const *str)
 {
 	size_t	i;
 
@@ -36,11 +36,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	j = 0;
 	k = 0;
-	while (s1[i] && ft_in((char)s1[i], (char *)set))
+	while (s1[i] && ft_in(s1[i], set))
 		i++;
 	if (i == ft_strlen(s1) - 1)
 		return (NULL);
-	while (ft_strlen(s1) - j - 1 >= 0 && ft_in((char)s1[ft_strlen(s1) - j - 1], (char *)set))
+	while ((int)(ft_strlen(s1) - j - 1) >= 0 && ft_in(s1[ft_strlen(s1) - j - 1], set))
 		j++;
 	if (!(str = (char *)malloc((ft_strlen(s1) - i - j + 1) * sizeof(char))))
 		return (NULL);
@@ -49,5 +49,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		str[k] = s1[i];
 		k++;
 	}
+	str[k] = '\0';
 	return (str);
 }
