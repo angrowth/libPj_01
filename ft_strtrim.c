@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		ft_in(char c, char *str)
+int		ft_in(const char c, const char *str)
 {
 	size_t	i;
 
