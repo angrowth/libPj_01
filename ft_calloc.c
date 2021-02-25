@@ -18,6 +18,6 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (!(ptr = (void *)malloc(size * count)))
 		return (NULL);
-	ft_bzero(ptr, count);
+	ft_memset(ptr, 0, size*count);
 	return (ptr);
 }
