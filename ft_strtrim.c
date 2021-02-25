@@ -37,21 +37,23 @@ char	*ft_strtrim(char const *s1, char const *set)
 	j = 0;
 	k = 0;
 
-	while (s1[i] &&
-           ft_in((char)s1[i], set))
+    if (*s1 == 0)
+        return (char *)"";
+    while (s1[i] && ft_in((char)s1[i], set))
 		i++;
-	if (i == ft_strlen(s1) - 1)
-		return (NULL);
 	while ((int)((ft_strlen(s1) - j) - 1) >= 0 &&
            ft_in((char)s1[ft_strlen(s1) - j - 1], (char *)set))
 		j++;
-	if (!(str = (char *)malloc((ft_strlen(s1) - i - j + 1) * sizeof(char))))
+    if ( i == ft_strlen(s1) && j == ft_strlen(s1) )
+		return (char *)"";
+    if (!(str = (char *)malloc((ft_strlen(s1) - i - j + 1) * sizeof(char))))
 		return (NULL);
-	while (s1[i] && (i != ft_strlen(s1) - j))
+    k = i;
+	while (s1[k] && (k != ft_strlen(s1) - j))
 	{
-		str[k] = s1[i];
+		str[k-i] = s1[k];
 		k++;
 	}
-	str[k] = '\0';
+	str[k-i] = '\0';
 	return (str);
 }
