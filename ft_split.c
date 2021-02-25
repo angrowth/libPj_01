@@ -73,8 +73,10 @@ char	**ft_split(char const *s, char c)
 		while (s[j] && s[j] != c)
 			j++;
 		if (i != j)
+		{
 			str[k] = ft_copy((char *)s, i, j);
-		k++;
+			k++;
+		}
 		i = j;
 	}
 	str[k] = "";
