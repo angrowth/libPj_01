@@ -35,7 +35,7 @@ int	ft_atoi(const char *str)
 		res = res * 10 + (str[i] - '0');
 		i++;
 	}
-	if ( (res >= 9223372036854775808UL && sign == -1) || (res >= 9223372036854775808UL && sign == 1))
+	if ( (res >= 9223372036854775808UL && sign == -1) || (res >= 9223372036854775807UL && sign == 1))
 		return 0;
 	return (sign * res);
 }
