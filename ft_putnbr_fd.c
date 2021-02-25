@@ -14,14 +14,14 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*tmp;
+	char	tmp;
 	long	i;
 
 	i = n;
 	if (i < 0)
 	{
 		i *= -1;
-		write(fd, "-", sizeof(char));
+		write(fd, "-", ft_strlen("-"));
 	}
 	if (i > 9)
 	{
@@ -30,7 +30,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else
 	{
-		tmp = (char *)(i + '0');
-		write(fd, tmp, sizeof(char));
+		tmp = i + '0';
+		write(fd, &tmp, ft_strlen(tmp));
 	}
 }
