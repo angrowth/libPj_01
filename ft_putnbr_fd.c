@@ -31,6 +31,6 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 	{
 		tmp = i + '0';
-		write(fd, &tmp, ft_strlen(tmp));
+		write(fd, &tmp, ft_strlen(&tmp));
 	}
 }
