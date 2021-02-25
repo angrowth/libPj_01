@@ -14,8 +14,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	tmp;
-	long	i;
+	char		tmp;
+	long int	i;
 
 	i = n;
 	if (i < 0)
@@ -25,8 +25,8 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (i > 9)
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
+		ft_putnbr_fd(i / 10, fd);
+		ft_putnbr_fd(i % 10, fd);
 	}
 	else
 	{
