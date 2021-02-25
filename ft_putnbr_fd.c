@@ -21,7 +21,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (i < 0)
 	{
 		i *= -1;
-		write(fd, "-", ft_strlen("-"));
+		write(fd, "-", sizeof(char));
 	}
 	if (i > 9)
 	{
@@ -31,6 +31,6 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 	{
 		tmp = i + '0';
-		write(fd, &tmp, ft_strlen(&tmp));
+		write(fd, &tmp, sizeof(char));
 	}
 }
