@@ -6,7 +6,7 @@
 /*   By: anachid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 14:35:04 by anachid           #+#    #+#             */
-/*   Updated: 2021/01/23 14:35:31 by anachid          ###   ########.fr       */
+/*   Updated: 2021/02/25 23:37:59 by anachid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (!s)
+		return ;
 	write(fd, s, sizeof(char) * ft_strlen(s));
 }

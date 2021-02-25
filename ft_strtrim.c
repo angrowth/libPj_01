@@ -6,7 +6,7 @@
 /*   By: anachid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 14:30:21 by anachid           #+#    #+#             */
-/*   Updated: 2021/01/30 13:16:54 by anachid          ###   ########.fr       */
+/*   Updated: 2021/02/25 23:48:25 by anachid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	j = 0;
 	k = 0;
 
+	if (!s1 || !set)
+		return NULL;
     if (*s1 == 0)
-        return (char *)"";
+        return "";
     while (s1[i] && ft_in((char)s1[i], set))
 		i++;
 	while ((int)((ft_strlen(s1) - j) - 1) >= 0 &&

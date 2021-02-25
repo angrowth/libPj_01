@@ -6,7 +6,7 @@
 /*   By: anachid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 14:30:52 by anachid           #+#    #+#             */
-/*   Updated: 2021/01/30 13:18:46 by anachid          ###   ########.fr       */
+/*   Updated: 2021/02/25 23:46:20 by anachid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,10 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	k = 0;
+	if (!s)
+		return NULL;
 	if (!(str = (char **)malloc((ft_size(s, c) + 1) * sizeof(char *))))
-		return (NULL);
+		return NULL;
 	while (s[i])
 	{
 		while (s[i] && s[i] == c)
