@@ -30,7 +30,7 @@ all:	$(NAME)
 clean:
 		$(RM) $(OBJS) $(BONUS_OBJS)
 
-flean:	clean
+fclean:	clean
 		$(RM) $(NAME)
 
 re:		fclean all
