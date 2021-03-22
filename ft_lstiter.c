@@ -6,7 +6,7 @@
 /*   By: anachid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 14:43:25 by anachid           #+#    #+#             */
-/*   Updated: 2021/02/25 23:14:18 by anachid          ###   ########.fr       */
+/*   Updated: 2021/03/22 15:49:08 by anachid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-    if (!f)
+	if (!f)
 		return ;
 	while (lst)
 	{
 		f(lst->content);
-        lst = lst->next;
+		lst = lst->next;
 	}
 }

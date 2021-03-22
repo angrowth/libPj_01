@@ -6,7 +6,7 @@
 /*   By: anachid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 16:36:14 by anachid           #+#    #+#             */
-/*   Updated: 2021/02/25 23:54:22 by anachid          ###   ########.fr       */
+/*   Updated: 2021/03/22 15:08:50 by anachid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src,
 
 	i = 0;
 	if (!dst || !src)
-		return 0;
+		return (0);
 	if (!dstsize)
 		return (ft_strlen(src));
 	while (src[i] && (i + 1) < dstsize)

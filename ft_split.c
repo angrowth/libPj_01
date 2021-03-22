@@ -6,7 +6,7 @@
 /*   By: anachid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 14:30:52 by anachid           #+#    #+#             */
-/*   Updated: 2021/02/25 23:46:20 by anachid          ###   ########.fr       */
+/*   Updated: 2021/03/22 15:10:09 by anachid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	k = 0;
 	if (!s)
-		return NULL;
+		return (NULL);
 	if (!(str = (char **)malloc((ft_size(s, c) + 1) * sizeof(char *))))
-		return NULL;
+		return (NULL);
 	while (s[i])
 	{
 		while (s[i] && s[i] == c)
@@ -75,10 +75,7 @@ char	**ft_split(char const *s, char c)
 		while (s[j] && s[j] != c)
 			j++;
 		if (i != j)
-		{
-			str[k] = ft_copy((char *)s, i, j);
-			k++;
-		}
+			str[k++] = ft_copy((char *)s, i, j);
 		i = j;
 	}
 	str[k] = NULL;

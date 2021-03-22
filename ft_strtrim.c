@@ -6,7 +6,7 @@
 /*   By: anachid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 14:30:21 by anachid           #+#    #+#             */
-/*   Updated: 2021/02/25 23:48:25 by anachid          ###   ########.fr       */
+/*   Updated: 2021/03/22 15:18:22 by anachid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	j = 0;
 	k = 0;
-
 	if (!s1 || !set)
-		return NULL;
-    if (*s1 == 0)
-        return "";
-    while (s1[i] && ft_in((char)s1[i], set))
+		return (NULL);
+	while (s1[i] && ft_in((char)s1[i], set))
 		i++;
 	while ((int)((ft_strlen(s1) - j) - 1) >= 0 &&
-           ft_in((char)s1[ft_strlen(s1) - j - 1], (char *)set))
+			ft_in((char)s1[ft_strlen(s1) - j - 1], (char *)set))
 		j++;
-    if ( i == ft_strlen(s1) && j == ft_strlen(s1) )
-		return (char *)"";
-    if (!(str = (char *)malloc((ft_strlen(s1) - i - j + 1) * sizeof(char))))
+	if (i == ft_strlen(s1) && j == ft_strlen(s1))
+		return ((char *)"");
+	if (!(str = (char *)malloc((ft_strlen(s1) - i - j + 1) * sizeof(char))))
 		return (NULL);
-    k = i;
-	while (s1[k] && (k != ft_strlen(s1) - j))
-	{
-		str[k-i] = s1[k];
-		k++;
-	}
-	str[k-i] = '\0';
+	k = i - 1;
+	while (s1[++k] && (k != ft_strlen(s1) - j))
+		str[k - i] = s1[k];
+	str[k - i] = '\0';
 	return (str);
 }
